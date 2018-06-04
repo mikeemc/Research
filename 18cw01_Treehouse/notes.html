@@ -1,0 +1,1206 @@
+<?php
+echo 'Hello World';
+?>
+
+Four scalar types:
+	boolean = true or false
+	integer (does not need quotes)
+	float (floating-point number, aka double)
+	string (will need quotations)
+Two compound types:
+	array
+	object
+And finally two special types:
+	resource
+	NULL
+
+		
+floats also known as " Floating point numbers", "doubles", or "real numbers", can be specified using any of the following syntaxes:
+
+$a = 1.234; 
+$b = 1.2e3; 
+$c = 7E-10;
+
+<?php
+$num_one = 1;
+$num_two = 2;
+$num_three = 3;
+
+// echo $num_one = 1;
+// var_dump( $num_one );
+// var_dump( $num_one + $num_two );
+
+$distance_home = 1.2;
+$distance_work = 2.5;
+
+var_dump($distance_home + $distance_work + $num_three);
+
+$a = 5;
+$b = 10;
+
+var_dump($a + $b);
+var_dump($a / $b);
+
+?>
+
+<?php
+
+// Weight
+
+$pounds = 140;
+$lb_to_kg = 0.453592;
+$kilograms = $pounds * $lb_to_kg;
+
+echo "Weight: ";
+echo $pounds;
+echo " lb = ";
+echo $kilograms;
+echo "kg";
+
+//Distance
+
+$miles = 2.5;
+$mile_to_km = 1.60934;
+$kilometers = $miles * $mile_to_km;
+
+echo "Distance: ";
+echo $miles;
+echo " miles = ";
+echo $kilometers;
+echo " km";
+
+?>
+
+operators
+$a = 10;
+$b = "10";
+
+$c = ($a == $b);
+compare values
+
+$a === "5";
+
+$Variable = $a;
+------------------------------
+$a = 10;
+$b = 5;
+
+if ($a > $b) {
+  echo "a is bigger than b";
+}
+
+------------------------------
+
+$a = 10;
+$b = 10;
+
+if ($a > $b) {
+    echo "a is bigger than b";
+} elseif ($a == $b) {
+    echo "a is equal to b";
+} else {
+    echo "a is smaller than b";
+}
+------------------------------
+
+<?php
+$studentOneName = 'Dave';
+$studentOneGPA = 3.8;
+
+$studentTwoName = 'Treasure';
+$studentTwoGPA = 4.0;
+
+//Place your code below this comment
+
+if ($studentOneGPA == 4.0) {
+    echo "$studentOneName made the Honor Roll";
+} else {
+    echo "$studentOneName has a GPA of $studentOneGPA";
+}
+
+if ($studentTwoGPA == 4.0) {
+    echo "$studentTwoName made the Honor Roll";
+} else {
+    echo "$studentTwoName has a GPA of $studentTwoGPA";
+}
+
+?>
+
+
+<?php
+// store each exercise in a string variable
+$exercise1 = 'Display "Hello World!"';
+$exercise2 = 'Convert Pounds to Kilograms';
+$exercise3 = 'Convert Kilograms to Pounds';
+$exercise4 = 'Convert Miles to Kilometers';
+$exercise5 = 'Convert Kilometers to Miles';
+$exercise6 = 'Month long string of the day';
+$exercise7 = 'String of the day with levels';
+
+// create a variable containing the day of the week
+$day = date('N');
+$day = 1;
+
+// use an if statement to test for the day of the week
+if ($day == 1) {
+  echo $exercise1;
+} elseif ($day == 2) {
+  echo $exercise2;
+} elseif ($day == 3) {
+  echo $exercise3;
+} elseif ($day == 4) {
+  echo $exercise4;
+} elseif ($day == 5) {
+  echo $exercise5;
+} elseif ($day == 6) {
+  echo $exercise6;
+} elseif ($day == 7) {
+  echo $exercise7;
+}
+
+// display the corresponding exercise string
+?>
+
+Documentation
+
+date()
+Creating a Timestamp
+
+getlastmod() - Gets timestamp of last page modification of current page
+
+filemtime() - Allows you to get the timestamp of the last modification date of a specified file.
+
+mktime() - Allows you to get the timestamp for a specific date and time
+
+strtotime() - Parse about any English textual datetime description into a timestamp
+
+<?php
+// The switch is basically a list of elseifs
+switch (date('l')) {
+   case "Monday":
+       echo "Wash on Monday";
+       break;
+   case "Tuesday":
+       echo "Iron on Tuesday";
+       break;
+   case "Wednesday":
+       echo "Mend on Wednesday";
+       break;
+   case "Thursday":
+       echo "Churn on Thursday";
+       break;
+   case "Friday":
+       echo "Clean on Friday";
+       break;
+   case "Saturday":
+       echo "Bake on Saturday";
+       break;
+   case "Sunday":
+       echo "Rest on Sunday";
+       break;
+   default:
+       echo "I don't know what day it is";
+       break;
+}
+?>
+
+
+<?php
+
+//Students class average <70%:
+//Dear Alena Holligan,
+//We look forward to seeing you at summer school, beginning July 1st!
+
+//Student class average >=70% and current grade 9
+//Dear Alena Holligan,
+//Congratulations on completing your freshman year in High School! We’ll see you on September 1st for the start of your sophomore year!
+
+//Student class average >=70% and current grade 10
+//Dear Alena Holligan,
+//Congratulations on completing your sophomore year in High School! We’ll see you on September 1st for the start of your junior year!
+
+//Student class average >=70% and current grade 11
+//Dear Alena Holligan,
+//Congratulations on completing your junior year in High School! We’ll see you on September 1st for the start of your senior year!
+
+//Student class average >= 70% and current grade 12
+//Dear Alena Holligan,
+//Congratulations! You’ve graduated High School! Don’t forget to come back and visit.
+
+$firstName = 'Mike';
+$lastName = 'Mc';
+$currentGrade = 12;
+$finalAverage = .74;
+$messageBody = '';
+
+if (!$firstName || !$lastName) {
+  echo 'Please enter a student name';
+} elseif ($currentGrade < 9 || $currentGrade > 12) {
+  echo 'This is only for high school students. Please enter a grade between 9 and 12';
+} else {
+  if ($finalAverage < .70) {
+  $messageBody = 'We look forward to seeing you at summer school, beginning July 1st!';
+  } else {
+
+        switch ($currentGrade) {
+      case 9:
+        $messageBody = 'Congratulations on completing your freshman year in High School! We’ll see you on September 1st for the start of your sophomore year!';
+        break;
+      case 10:
+        $messageBody = 'Congratulations on completing your sophomore year in High School! We’ll see you on September 1st for the start of your junior year!';
+        break;
+      case 11:
+        $messageBody = 'Congratulations on completing your junior year in High School! We’ll see you on September 1st for the start of your senior year!';
+        break;
+      case 12:
+        $messageBody = 'Congratulations! You’ve graduated High School! Don’t forget to come back and visit.';
+        break;
+      default:
+        $messageBody = 'Error: Grade level is not 9-12';
+        break;
+    
+    }
+  }
+   echo "Dear $firstName $lastName\n";
+  echo $messageBody;
+}
+
+?>
+
+
+<?php
+//TEST
+
+//Available roles: admin, editor, author, subscriber
+if (!isset($role)) {
+    $role = 'subscriber';
+}
+
+//change to switch statement
+switch ($role) {
+  case "admin":
+    echo "As an admin, you can add, edit, or delete any post.";
+    break;
+  default:
+    echo "You do not have access to this page. Please contact your administrator.";
+    break;
+}
+?>
+
+PHP Arrays and Control Structures
+
+<?php
+
+$learn = array('Conditionals','Arrays','Loops'); // List of arrays
+$learn[] = '4th Array'; // Adds one option onto the end
+array_push($learn,'Functions','Forms','Objects'); // Adds multiple options onto the end
+array_unshift($learn,'HTML','CSS'); // Adds multiple options onto the start
+
+echo 'you removed ' . array_shift($learn); // Removes the first option
+echo 'you removed ' . array_pop($learn); // Removes the last option
+
+unset($learn[1],$learn[2]); // Removes specific options
+$learn = array_values($learn); // Fills in the order if specific options are removed
+unset($learn); // Removes everything, the variable no longer exists
+
+$learn = 'New option'; // Overwrites the array and sets as a variable string
+$learn[3] = 'Not Loops'; // Overwrites specific option
+
+var_dump($learn);
+//echo $learn[2];
+//echo implode("\n",$learn);
+
+?>
+
+Associated Arrays
+
+<?php
+
+$iceCream = array(
+  'Alena' => 'Black Cherry',
+  'Tim' => 'Chocolate',
+  'Dave' => 'Cookies',
+  'Ria' => 'Strawberry',
+); // List of arrays not numerically indexed
+
+var_dump($iceCream);
+
+echo $iceCream['Tim']; // Echos by name rather than number
+
+?>
+
+Multidimensional Arrays
+
+<?php
+
+$task1 = array(
+  'title' => 'Laundry',
+  'priority' => 2,
+  'due' => '',
+  'complete' => true,
+);
+
+$task2 = array(
+  'title' => 'Clean out refrigerator',
+  'priority' => 3,
+  'due' => '07/30/2016',
+  'complete' => false,
+);
+
+$list = array($task1, $task2);
+
+var_dump($list);
+
+// echo $list[0]['title'];
+
+// Below is the same outcome but different format
+
+$list[] = [
+  'title' => 'Laundry',
+  'priority' => 2,
+  'due' => '',
+  'complete' => true,
+];
+
+$list[] = [
+  'title' => 'Clean out refrigerator',
+  'priority' => 3,
+  'due' => '07/30/2016',
+  'complete' => false,
+];
+
+var_dump($list);
+
+?>
+
+Multidimensional Arrays test
+
+<?php
+//edit this array
+$contacts = array (
+  array (
+   'name' => 'Alena Holligan',
+   'email' => 'alena.holligan@teamtreehouse.com',
+  ),
+  array (
+   'name' => 'Dave McFarland',
+     'email' => 'dave.mcfarland@teamtreehouse.com',
+  ),
+  array (
+   'name' => 'Treasure Porth',
+   'email' => 'treasure.porth@teamtreehouse.com',
+  ),
+  array (
+   'name' => 'Andrew Chalkley',
+    'email' => 'andrew.chalkley@teamtreehouse.com',
+  ),
+);
+echo "<ul>\n";
+//$contacts[0] will return 'Alena Holligan' in our simple array of names.
+echo "<li>". $contacts[0]['name'] . " : " . $contacts[0]['email'] . "</li>\n";
+echo "<li>". $contacts[1]['name'] . " : " .  $contacts[1]['email'] . "</li>\n";
+echo "<li>". $contacts[2]['name'] . " : " . $contacts[2]['email'] . "</li>\n";
+echo "<li>". $contacts[3]['name'] . " : " . $contacts[3]['email'] . "</li>\n";
+echo "</ul>\n";
+?>
+
+<?php
+$winter = array("December", "January", "February");
+$spring = array("March", "April", "May");
+$summer = array("June", "July", "August");
+$fall = array("September", "October", "November");
+$seasons = array("Winter" => $winter, "Spring" => $spring, "Summer" => $summer, "Fall" => $fall);
+?>
+
+Condition
+
+<?php
+// Basic conditional statement
+if () {
+}
+if (condition) {
+action
+}
+// Example
+if ($name == 'Treehouse') {
+echo 'Hey, I know you!';
+}
+?>
+
+Do while looping
+
+<?php
+// Basic conditional statement
+while () {
+}
+// Same as condition but will loop over and over again until the value is not true
+if ($name == 'Treehouse') {
+echo 'Hey, I know you!';
+}
+?>
+
+<?php
+
+$currentYear = date('Y');
+$year = $currentYear - 100;
+
+/*while (++$year <= $currentYear){
+  echo $year . "<br />\n";
+}*/
+
+do {
+  echo $year . "<br />\n";
+} while (++$year <= $currentYear); // Displays before incrememnting
+
+?>
+
+PINGPONG game
+
+<?php
+$player1 = 5;
+$player2 = 5;
+$round = 0;
+
+while (abs($player1 - $player2)<2 || ($player1 < 11 && $player2 < 11)){
+  $round++; // increments the value of round
+  echo "";
+  if (rand(0,1)) { // random using true 0 or false 1. It will be one or the other.
+  $player1++; // If true, increment once here
+  } else {
+  $player2++; // If false, increment once here
+  }
+  echo "Player1 = $player1<br/>\n";
+  echo "Player2 = $player2<br/>\n";
+}
+?>
+
+Single line for loop
+
+<?php
+for($year = date('Y')-100; ++$year <= date('Y'); print $year."<br />");
+?>
+
+<?php
+$currentYear = date('Y');
+
+// - 100 refers to the amount of records shown
+
+for ($year = $currentYear - 100;$year <= $currentYear;$year++)
+{
+    echo $year . "<br/>\n";
+}
+?>
+
+<?php
+for ($i = 1; $i <= 100; $i++){
+    echo $i;
+    if(!isset($facts[$i])) {
+        echo "<br />\n";
+    }
+    if(isset($facts[$i])){
+        echo $facts[$i] . "<br />\n";
+    }
+}
+?>
+
+Foreach loops
+
+<?php
+
+include 'list.php':
+
+foreach ($list as $key => $item) {
+  echo $key . ' = ' . $item['title'] . "<br/> \n";
+}
+
+echo '<table>';
+echo '<tr>';
+echo '<th>Title</th>';
+echo '<th>Priority</th>';
+echo '<th>Due date</th>';
+echo '<th>Complete</th>';
+echo '</tr>';
+
+foreach ($list as $item) {
+  echo '<tr>';
+  echo '<td>' . $item['title'] . "</td> \n";
+  echo '<td>' . $item['priority'] . "</td> \n";
+  echo '<td>' . $item['due'] . "</td> \n";
+  echo '<td>';  
+  if ($item['complete']) {
+    echo 'yes';
+  } else {
+    echo 'no';
+  }
+  echo "</td> \n";
+  echo '</tr>';
+} // Inside this foreach, it is a repeating loop
+
+echo '</table>';
+
+var_dump($list);
+
+?>
+
+Todo app
+
+<?php
+
+include 'list.php':
+
+$status = 'all';
+$field = 'priority';
+
+$order = array(); // New array called order
+if ($status == 'all') {
+  $order = array_keys($list);
+} else{
+    foreach ($list as $key => $item) {
+      if (!$item['complete'] == $status) {
+        $order[] = $key;
+      }
+    }
+}
+
+if ($field) {
+    $sort = array();
+    foreach ($order as $id){
+      $sort[$id] = $list[$id][$field];
+    }
+    $asort($sort);
+    $order = array_keys($sort);
+}
+
+// var_dump($order);
+// var_dump($list);
+
+echo '<table>';
+echo '<tr>';
+echo '<th>Title</th>';
+echo '<th>Priority</th>';
+echo '<th>Due date</th>';
+echo '<th>Complete</th>';
+echo '</tr>';
+
+foreach ($order as $id) {
+  echo '<tr>';
+  echo '<td>' . $list[$id]['title'] . "</td> \n";
+  echo '<td>' . $list[$id]['priority'] . "</td> \n";
+  echo '<td>' . $list[$id]['due'] . "</td> \n";
+  echo '<td>';  
+  if ($item['complete']) {
+    echo 'yes';
+  } else {
+    echo 'no';
+  }
+  echo "</td> \n";
+  echo '</tr>';
+} // Inside this foreach, it is a repeating loop
+
+echo '</table>';
+
+var_dump($list);
+
+?>
+
+Feature Switch this week
+
+<?php
+
+include 'list.php':
+
+$status = 'all';
+$field = 'priority';
+$action = 'sort';
+
+$order = array(); // New array called order
+if ($status == 'all') {
+  $order = array_keys($list);
+} else{
+    foreach ($list as $key => $item) {
+      if (!$item['complete'] == $status) {
+        $order[] = $key;
+      }
+    }
+}
+
+
+
+switch ($action) {
+  case 'sort':
+                  if ($field) {
+                      $sort = array();
+                      foreach ($order as $id){
+                        $sort[$id] = $list[$id][$field];
+                      }
+                      $asort($sort);
+                      $order = array_keys($sort);
+                  }
+    break;
+  case 'week';
+    foreach ($order as $key => $value) {
+        if (strtotime($list[$value]['due']) > strtotime("+1 week") || !$list[$value]['due']) {
+            unset($order[$key]);
+
+      }
+  
+  
+// var_dump($order);
+// var_dump($list);
+
+echo '<table>';
+echo '<tr>';
+echo '<th>Title</th>';
+echo '<th>Priority</th>';
+echo '<th>Due date</th>';
+echo '<th>Complete</th>';
+echo '</tr>';
+
+foreach ($order as $id) {
+  echo '<tr>';
+  echo '<td>' . $list[$id]['title'] . "</td> \n";
+  echo '<td>' . $list[$id]['priority'] . "</td> \n";
+  echo '<td>' . $list[$id]['due'] . "</td> \n";
+  echo '<td>';  
+  if ($item['complete']) {
+    echo 'yes';
+  } else {
+    echo 'no';
+  }
+  echo "</td> \n";
+  echo '</tr>';
+} // Inside this foreach, it is a repeating loop
+
+echo '</table>';
+
+var_dump($list);
+
+?>
+
+TEST
+
+<?php
+
+// Display the list of flavours
+
+$flavors = array();
+$flavors[] = array("name" => "Cookie Dough",      "in_stock" => true);
+$flavors[] = array("name" => "Vanilla",           "in_stock" => false);
+$flavors[] = array("name" => "Avocado Chocolate", "in_stock" => false);
+$flavors[] = array("name" => "Bacon Me Crazy",    "in_stock" => true);
+$flavors[] = array("name" => "Strawberry",        "in_stock" => false);
+
+// var_dump($flavors);
+
+foreach ($flavors as $name => $value) {
+  echo $value['name'] . "\n";
+}
+
+// The AS creates key and item variables from the array data.
+// must echo the variable but put the original name in brackets
+
+?>
+
+<?php
+
+// Display the list of flavours which are in stock
+
+$flavors = array();
+$flavors[] = array("name" => "Cookie Dough",      "in_stock" => true);
+$flavors[] = array("name" => "Vanilla",           "in_stock" => false);
+$flavors[] = array("name" => "Avocado Chocolate", "in_stock" => false);
+$flavors[] = array("name" => "Bacon Me Crazy",    "in_stock" => true);
+$flavors[] = array("name" => "Strawberry",        "in_stock" => false);
+
+// var_dump($flavors);
+
+foreach ($flavors as $name => $value) {
+  if ($value['in_stock'] == "true") {
+        echo $value['name'] . "\n";
+      }
+}
+
+// Add the if statement for the in_stock variable
+
+?>
+
+PHP Functions
+
+<?php
+
+function hello(){
+	echo 'Hello';
+}
+// Name the function, then to call a function hello();
+
+$current_user = 'Me';
+
+function is_mike(){
+  global $current_user; // Add the global function, to search for the variable outside
+  if($current_user == 'Mike'){
+    echo 'It is Mike!';
+  }  else {
+    echo 'Nope, it is not Mike.';
+  }
+}
+
+is_mike();
+
+?>
+
+PHP Function Argument
+
+<?php
+
+function hello($arr){
+  if(is_array($arr)){ // if this variable is an array, go through each name.
+    foreach($arr as $name){
+      echo "Hello, $name, how's it going?<br/>";
+    }
+  } else{
+    echo 'Hello, friends.'; // If no names are found, show this.
+  }
+}
+
+$names = array(
+  'Mike',
+  'Hampton',
+  'Charlie',
+);
+
+// created to hold the names data
+
+hello($names);
+
+// connects to the array with names data
+
+?>
+
+PHP Function Default Arguments
+
+<?php
+
+function get_info($name, $title = Null){
+  if($title){
+    echo "$name has arrived, he is a $title";
+  } else {
+    echo "$name has arrived, welcome!";
+  }}
+
+get_info('Mike','twat');
+
+?>
+
+Returning values
+
+<?php
+
+function hello($name){
+  if($name == 'Mike'){
+    return 'Hello, Mike!';
+  } else {
+    return 'Hello stranger.';
+  }
+}
+
+$greeting = hello('Mike'); // String generated by this function
+
+echo $greeting;
+
+?>
+
+<?php
+
+function add_up($a, $b){
+  $arr = array(
+    $a,
+    $b,
+    $a + $b
+  );
+  return $arr;
+}
+
+$value = add_up(2, 4);
+
+echo $value[2];
+
+?>
+
+PHP Variable Functions
+
+<?php
+
+function answer(){
+  return 42;
+}
+
+$func = 'answer';
+
+$ans = $func();
+
+echo $ans;
+
+function add_up($a, $b){
+  return $a + $b;
+}
+
+$func2 = 'add_up';
+
+$add = $func2(5, 10);
+
+echo $add;
+
+?>
+
+PHP Closures
+
+<?php
+
+$name = 'Mike';
+
+$greet = function () use($name){
+  echo "Hello there, $name!";
+}; 
+
+// Anon function must be ended with semi-colon
+// Anon function has the 'use' keyword
+
+$greet();
+
+?>
+
+String Functions
+
+<?php
+
+$phrase = 'There is a snake in my boot';
+
+$len = strlen($phrase);
+// echo $len;
+// echo substr($phrase, 5); - Starts the string from 5CH
+// echo substr($phrase, 0, 5); - Shows from beginning between these CH
+
+echo strpos($phrase, 'sna');
+
+?>
+
+Array Functions
+
+<?php
+
+$names = array(
+  'Mike' => 'Frog',
+  'Chris' => 'Teacher',
+  'Hampton' => 'Teacher',
+);
+
+// Mike is the 'key' and Frog is the 'value'
+
+/*
+  foreach(array_keys($names) as $name){
+  echo "Hello, $name!<br/>";
+}*/
+
+function print_info($value, $key){
+  echo "$key is a $value.<br/>";
+}
+ 
+array_walk($names, 'print_info');
+
+?>
+
+ADDING ADDITIONAL ELEMENTS TO AN ARRAY
+
+<?php
+
+$catalog = array(
+  "Design Patterns",
+  "Forrest Gump",
+  "Beethoven"
+); //This command creates a new array with 3 existing elements
+
+$catalog[] = "Clean Code"; // This command adds an element to the existing array
+
+?>
+
+<?php
+
+$catalog = array();
+$catalog[] = "Design Patterns";
+$catalog[] = "Forrest Gump";
+$catalog[] = "Beethoven";
+$catalog[] = "Clean Code";
+//This command creates the same result
+?>
+
+Access the key of an array in a foreach loop
+
+<?php
+foreach ($array as $key => $value) 
+?>
+ 
+Setting Up the Initial Form
+
+<?php 
+$pageTitle = "Suggest a Media Item";
+$section = "suggest";
+
+include("inc/header.php"); ?>
+
+<div class="section page">
+    <div class="wrapper">
+        <h1>Suggest a Media Item</h1>
+        <p>If you think there is something I'm missing, let me know! Complete the form to send me an email.</p>
+      <form method="post" action="process.php">
+        <table>
+          <tr>
+            <th><label for="name">Name</label></th>
+            <td><input type="text" id="name" name="name" /></td>
+          </tr>
+          <tr>
+            <th><label for="email">Email</label></th>
+            <td><input type="text" id="email" name="email" /></td>
+          </tr>
+          <tr>
+            <th><label for="details">Suggest Item Details</label></th>
+            <td><textarea name="details" id="details"></textarea></td>
+          </tr>
+        </table>
+        <input type="submit" value="send"/>
+      </form>
+    </div>
+</div>
+
+<?php include("inc/footer.php"); ?>
+
+INFO FROM THIS FORM IS TAKEN LIKE THIS:
+
+<?php
+
+$name = $_POST["name"]; //name matches the name attribute
+$email = $_POST["email"];
+$details = $_POST["details"];
+
+echo $name;
+echo $email;
+echo $details;
+
+?>
+
+$_GET[] Sends Form Data Via the URL and $_POST[] Sends Form Data Behind-the-Scenes
+
+Working with Concatenation and whitespaces
+
+<?php
+
+$name = $_POST["name"]; //name matches the name attribute
+$email = $_POST["email"];
+$details = $_POST["details"];
+
+echo "<pre>";
+$email_body = "";
+$email_body .= "Name " . $name . "\n"; // dot equals keeps the info in the variable and then adds on
+$email_body .= "Email " . $email . "\n";
+$email_body .= "Details " . $details . "\n"; // Using dots and variables = concatenation 
+echo $email_body;
+echo "</pre>";
+
+?>
+
+<?php
+
+$title = "Dr.";
+$firstName = "David";
+$lastName = "Bowman";
+$fullName = $title . " " . $firstName . " " . $lastName;
+
+echo "The lead character from 2001: A Space Odyssey is named " . $fullName;
+
+?>
+
+Redirecting After a Form Submission
+
+<?php
+
+$name = $_POST["name"]; //name matches the name attribute
+$email = $_POST["email"];
+$details = $_POST["details"];
+
+echo "<pre>";
+$email_body = "";
+$email_body .= "Name " . $name . "\n"; // dot equals keeps the info in the variable and then adds on
+$email_body .= "Email " . $email . "\n";
+$email_body .= "Details " . $details . "\n"; // Using dots and variables = concatenation 
+echo $email_body;
+echo "</pre>";
+
+//To Do: Send email
+header("location:thanks.php"); // Redirect after data submitted
+
+?>
+
+<?php
+
+$pageTitle = "Thanks you";
+$section = null;
+
+include("inc/header.php"); ?>
+
+<div class="section page">
+  <h1>Thank you</h1>
+  <p>Thanks for the email! I'll check out your suggestions shortly!</p>
+  </div>
+
+<?php include("inc/footer.php"); ?>
+
+
+Checking the Request Method - same as before but all posting done in the one php file - handles all 3 steps of the submissed, displaying form, handling the submission and displaying the thankyou message
+
+<?php 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST["name"]; //name matches the name attribute
+    $email = $_POST["email"];
+    $details = $_POST["details"];
+    
+    echo "<pre>";
+    $email_body = "";
+    $email_body .= "Name " . $name . "\n"; // dot equals keeps the info in the variable and then adds on
+    $email_body .= "Email " . $email . "\n";
+    $email_body .= "Details " . $details . "\n"; // Using dots and variables = concatenation 
+    echo $email_body;
+    echo "</pre>";
+    
+    //To Do: Send email
+    header("location:suggest.php?status=thanks"); // Redirect after data submitted
+}
+
+$pageTitle = "Suggest a Media Item";
+$section = "suggest";
+
+include("inc/header.php"); ?>
+
+<div class="section page">
+    <div class="wrapper">
+        <h1>Suggest a Media Item</h1>
+      
+      <?php if (isset($_GET["status"]) && $_GET["status"] == "thanks") {
+          echo "<p>Thanks for the email! I'll check out your suggestions shortly!</p>";
+} else { ?>
+
+      <!-- isset means if the value is set -->
+      <!-- if the get status equals thanks -->
+      
+        <p>If you think there is something I'm missing, let me know! Complete the form to send me an email.</p>
+      <form method="post" action="suggest.php">
+        <table>
+          <tr>
+            <th><label for="name">Name</label></th>
+            <td><input type="text" id="name" name="name" /></td>
+          </tr>
+          <tr>
+            <th><label for="email">Email</label></th>
+            <td><input type="text" id="email" name="email" /></td>
+          </tr>
+          <tr>
+            <th><label for="details">Suggest Item Details</label></th>
+            <td><textarea name="details" id="details"></textarea></td>
+          </tr>
+        </table>
+        <input type="submit" value="send"/>
+      </form>
+      
+   <?php } ?>   
+            
+    </div>
+</div>
+
+<?php include("inc/footer.php"); ?>
+
+
+Validating Form Data
+
+<?php 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = trim(filter_input(INPUT_POST,"name",FILTER_SANITIZE_STRING)); // name matches the name attribute
+    $email = trim(filter_input(INPUT_POST,"email",FILTER_SANITIZE_EMAIL)); // "trim" removes white space from the beginning and end of a piece of text
+    $details = trim(filter_input(INPUT_POST,"details",FILTER_SANITIZE_SPECIAL_CHARS));
+    
+  // $_POST["value"] refers to the name="value" attribute in the input tag  
+  
+  if ($name == "" OR $email == "" OR $details == "") { // Checks for values
+    echo "Please fill in the required fields: Name, Email and Details";
+    exit;
+  }
+  if ($_POST["address"] != ""){ // Checks for value 
+    echo "Bad form input";
+    exit;
+  }
+    
+    echo "<pre>";
+    $email_body = "";
+    $email_body .= "Name " . $name . "\n"; // dot equals keeps the info in the variable and then adds on
+    $email_body .= "Email " . $email . "\n";
+    $email_body .= "Details " . $details . "\n"; // Using dots and variables = concatenation 
+    echo $email_body;
+    echo "</pre>";
+    
+    //To Do: Send email
+    header("location:suggest.php?status=thanks"); // Redirect after data submitted
+}
+
+$pageTitle = "Suggest a Media Item";
+$section = "suggest";
+
+include("inc/header.php"); ?>
+
+<div class="section page">
+    <div class="wrapper">
+        <h1>Suggest a Media Item</h1>
+      
+      <?php if (isset($_GET["status"]) && $_GET["status"] == "thanks") {
+          echo "<p>Thanks for the email! I'll check out your suggestions shortly!</p>";
+} else { ?>
+
+      <!-- isset means if the value is set -->
+      <!-- if the get status equals thanks -->
+      
+        <p>If you think there is something I'm missing, let me know! Complete the form to send me an email.</p>
+      <form method="post" action="suggest.php">
+        <table>
+          <tr>
+            <th><label for="name">Name</label></th>
+            <td><input type="text" id="name" name="name" /></td>
+          </tr>
+          <tr>
+            <th><label for="email">Email</label></th>
+            <td><input type="text" id="email" name="email" /></td>
+          </tr>
+          <tr>
+            <th><label for="details">Suggest Item Details</label></th>
+            <td><textarea name="details" id="details"></textarea></td>
+          </tr>
+          <tr style="display:none">
+            <th><label for="address">Address</label></th>
+            <td><input type="text" id="address" name="address" /><p>Please leave this field blank</p></td>
+          </tr>
+        </table>
+        <input type="submit" value="send"/>
+      </form>
+      
+   <?php } ?>   
+            
+    </div>
+</div>
+
+<?php include("inc/footer.php"); ?>
+
+Using A Third-Party Library - 
+PHPMailer library on github https://github.com/PHPMailer/PHPMailer
+
+Using Object and Validating Email
+
+			- Non-objects - Objects
+information - variables - property
+Action		- functions - Methods
